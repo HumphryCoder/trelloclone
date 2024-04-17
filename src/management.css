@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+
+}
+
+.projectbar-container {
+    display: flex;
+    justify-content: center;
+    width: 1400px;
+    height: 45px;
+    background-color: #F1F2F5;
+    position: relative;
+    left: 250px;
+    top: 100px;
+    border-radius: 25px;
+    box-shadow: 8px 17px 20px #00000038;
+   
+}
+
+.navbar-container {
+    background-color: #F1F2F5;
+    border-right: 2px solid #D4D3D3;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 230px;
+    height: 100%;
+    justify-content: center;
+    z-index: 10;
+}
+
+
+.board-container {
+    background-color: #F1F2F5;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 180px;
+    height: 100%;
+    justify-content: center;
+    z-index: 1;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 300px;
+}
+
+.content-icons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+}
+
+.content-icons svg {
+    fill: #201E1E;
+    position: relative;
+    margin-top: 35px;
+    bottom: 0px;
+    left: 39px;
+    
+    z-index: 2;
+}
+
+.navbar-content .content-btn button {
+    
+    margin-top: 18px;
+    border-radius: 14px;
+    border-style: none;
+    background-color: #ffffff00;
+    color: #201E1E;
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    position: relative;
+    left: 10px;
+    width: 200px;
+    height: 35px;
+}
+
+.navbar-content .content-btn button:hover {
+   background-color: #444242;
+}
+
+.navbar-content-label {
+    color: #0070C9;
+    font-size: 11px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    position: relative;
+    left: 42px;
+}
+
+.premium-ad {
+    width: 192px;
+    height: 192px;
+    border-radius: 28px;
+    box-sizing: 192px 192px;
+    background-image: linear-gradient(to right, #FE00E5, #00DCF4);
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 1000px;
+    left: 18px;
+}
+
+.premium-label {
+    color: #FFFFFF;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    left: 25px;
+    top: 70px;
+}
+
+.premium-button {
+    color: #B83DE9;
+    background-color: #F4F4F4;
+    border-style: none;
+    width: 157px;
+    height: 27px;
+    border-radius: 7px;
+    position: absolute;
+    top: 140px;
+}
+
+.management-page {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #E8EAEF;
+
+    overflow-x: hidden;
+    background-size: cover;
+}
+
+.kanban-container {
+    display: flex;
+    justify-content: center;
+
+    left: 20px;
+    flex-direction: row;
+    top: 150px;
+    position: relative;
+
+}
+
+.notStartedTab {
+    display: flex;
+    justify-content: center;
+}
+
+.tab1Bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 380px;
+    background-color: #F1F2F5;
+    border-radius: 25px;
+    padding-bottom: 10px;
+    box-shadow: 8px 17px 23px #0000003d;
+    margin-right: 100px;
+
+}
+
+.tab1Bg li {
+    list-style-type: none;
+}
+
+.tab1Label {
+    margin-bottom: 15px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    height: 25px;
+    width: 180px;
+    border-radius: 10px;
+}
+
+.tab1Label p {
+    position: relative;
+    color: #201E1E;
+    font-size: 22px;
+    font-style: bold;
+    right: 30px;
+    top: 2px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.tab2Label p {
+    margin-bottom: 15px;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    font-size: 22px;
+    color: #201E1E;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.tab3Label p {
+    margin-bottom: 15px;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    font-size: 22px;
+    color: #201E1E;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.tab1NewTask {
+    display: flex;
+    justify-content: center;
+    outline: none;
+}
+
+.tab1NewTask button {
+    position: relative;
+    top: 0px;
+    margin-top: 10px;
+    padding: 5px 125px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0);
+    border-style: none;
+    color: #201E1E;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.tab1NewTask button:hover {
+    background-color: rgba(206, 206, 206, 0.397);
+}
+
+.tab1NewTask button span {
+    position: relative;
+    text-align: left;
+    right: 115px;
+    outline: none;
+}
+
+
+.tab1Tasks {
+    border-radius: 10px;
+    color: #201E1E;
+
+    box-shadow: 3px 6px 10.5px #0000002c;
+    border-style: none;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    top: 5px;
+    width: 17em;
+    height: 2em;
+    position: relative;
+    outline: none;
+}
+
+.workingOnTab {
+    display: flex;
+    justify-content: center;
+}
+
+.navbarBoardsBtn {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    color: black;
+    font-size: 10px;
+}
+
+.newBoardButton {
+    position: absolute;
+    left: 1280px;
+    top: 6px;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+
+    background-color: #0070C9;
+    color: #F4F4F4;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+
+    border-color: #00000000;
+    box-shadow: 3px 6px 10px #0000002f;
+}
+
+.boardTitle {
+    position: relative;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    right: 610px;
+    top: 6px;
+    font-size: 24px;
+}

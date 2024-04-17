@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.login-page {
+    margin: 0;
+    background-image: linear-gradient(90deg,  #FFC700, #FFDD3A);
+    overflow: hidden;
+  }
+
+.login-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: left;
+    top: 135px;
+
+}
+
+.login-container .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 125px;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    background-color: #F4F4F4;
+    box-shadow: 22px 38px 60px rgba(0, 0, 0, 0.178);
+    padding: 10px 10px;
+    width: 395px;
+    height: 565px;
+
+
+}
+
+.login-container .login-form label {
+    position: relative;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    display: flex;
+    right: 115px;
+    text-align: left;
+    justify-self: left;
+    top: 25px;
+}
+
+.login-container .login-form .emailLabel {
+    position: relative;
+    right: 135px;
+
+}
+
+
+
+.login-container .login-form input {
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    margin: 25px;
+    height: 46px;
+    width: 325px;
+    border: 1px solid;
+    
+}
+
+.login-element {
+    position: relative;
+    right: 92px;
+    top: 33px;
+    width: 135px;
+    height: 40px;
+    border: 0px solid;
+    background-color: #302D2D;
+    color: #F4F4F4;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.178);
+}
+
+.signup-element-link a {
+    position: relative;
+    bottom: 50px;
+    text-decoration: none;
+    color: #0070C9;
+}
+
+.welcome-element h1,
+.welcome-element h2 {
+    position: relative;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: left;
+    right: 30px;
+    bottom: 20px;
+}
+
+.welcome-element p {
+    color: #948F8F;
+    position: relative;
+    font-family: "Inter", sans-serif;
+    font-weight: 250;
+    bottom: 30px;
+    right: 30px;
+}

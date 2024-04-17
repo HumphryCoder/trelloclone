@@ -1,0 +1,21 @@
+html {
+    scroll-behavior: smooth;
+    scroll-behavior: slow;
+  }
+  
+  *{
+    padding: 0;
+    margin: 0;
+  }
+ 
+.home-page {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-image: linear-gradient(90deg, #EE83FF, #DB00FF, #8F00FF);
+ 
+  background-size: cover;
+  }
+
+ 
+

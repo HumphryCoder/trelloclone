@@ -1,0 +1,8 @@
+.app-page {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: -moz-linear-gradient(90deg, #EE83FF, #DB00FF, #8F00FF);
+   
+    background-size: cover;
+    }
