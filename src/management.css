@@ -19,7 +19,7 @@
     top: 100px;
     border-radius: 25px;
     box-shadow: 8px 17px 20px #00000038;
-   
+
 }
 
 .navbar-container {
@@ -39,11 +39,11 @@
 
 .board-container {
     background-color: #F1F2F5;
-    
+
     position: fixed;
     top: 0;
     left: 0;
-    
+
     width: 180px;
     height: 100%;
     justify-content: center;
@@ -71,12 +71,12 @@
     margin-top: 35px;
     bottom: 0px;
     left: 39px;
-    
+
     z-index: 2;
 }
 
 .navbar-content .content-btn button {
-    
+
     margin-top: 18px;
     border-radius: 14px;
     border-style: none;
@@ -92,7 +92,7 @@
 }
 
 .navbar-content .content-btn button:hover {
-   background-color: #444242;
+    background-color: #444242;
 }
 
 .navbar-content-label {
@@ -174,7 +174,7 @@
     padding-bottom: 10px;
     box-shadow: 8px 17px 23px #0000003d;
     margin-right: 100px;
-
+    
 }
 
 .tab1Bg li {
@@ -206,7 +206,7 @@
 }
 
 .tab2Label p {
-    margin-bottom: 15px;
+
     position: relative;
     left: 10px;
     top: 10px;
@@ -217,7 +217,7 @@
 }
 
 .tab3Label p {
-    margin-bottom: 15px;
+
     position: relative;
     left: 10px;
     top: 10px;
@@ -231,12 +231,12 @@
     display: flex;
     justify-content: center;
     outline: none;
+
 }
 
 .tab1NewTask button {
     position: relative;
     top: 0px;
-    margin-top: 10px;
     padding: 5px 125px;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0);
@@ -254,24 +254,51 @@
     position: relative;
     text-align: left;
     right: 115px;
+
     outline: none;
 }
 
+.tabTasks {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 15px;
+}
 
 .tab1Tasks {
     border-radius: 10px;
     color: #201E1E;
-
+    background-color: #F1F2F5;
     box-shadow: 3px 6px 10.5px #0000002c;
     border-style: none;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 15px;
     top: 5px;
-    width: 17em;
-    height: 2em;
+    width: 300px;
+    height: 36px;
     position: relative;
     outline: none;
+}
+
+.tab1span-container {
+    border-radius: 10px;
+
+    display: flex;
+    position: relative;
+
+    background-color: #F1F2F5;
+    box-shadow: 3px 6px 10.5px #0000002c;
+    width: 300px;
+    height: 36px;
+}
+
+.tab1span-container span {
+    color: #201E1E;
+    font-size: 18px;
+    top: 5px;
+    left: 10px;
+    position: relative;
 }
 
 .workingOnTab {
@@ -308,10 +335,66 @@
 
 .boardTitle {
     position: relative;
-
+    color: #201E1E;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     right: 610px;
     top: 6px;
     font-size: 24px;
+}
+
+
+
+
+
+.edit .editTask {
+    position: relative;
+    bottom: 8px;
+    right: 35px;
+    font-size: 30px;
+    color: #6D6B6B;
+    border-style: none;
+    background-color: #00000000;
+    transition: transform 0.15s ease-in-out;
+
+}
+
+.edit .editTask:hover {
+    transform: scale(1.1);
+
+}
+
+.editList {
+    height: 35px;
+    width: 140px;
+    border-radius: 10px;
+    background-color: #FAFBFE;
+    box-shadow: 9px 11px 28px #00074628;
+    display: flex;
+    position: fixed;
+    left: 550px;
+    top: 275px;
+    justify-content: center;
+}
+
+.removeTaskBtn {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 110px;
+    height: 17px;
+    background-color: #FF4E6E;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    border-style: none;
+}
+
+.removeTaskBtn:hover {
+   
+    background-color: #bd334c;
+   
 }

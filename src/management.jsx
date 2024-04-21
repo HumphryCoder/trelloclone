@@ -256,7 +256,27 @@ function Management() {
     }
   };
 
+  const [editList, setEditList] = useState(false);
 
+  const handleEditList = () => {
+    setEditList(!editList);
+  }
+
+  const handleTaskRemoval = async (taskId) => {
+    try {
+      const response = await axios.get(`http://127.0.0.1:5000/api/removeTask`, {
+        params: {
+          user_id: userId,
+          board_id: selectedBoard,
+          id: taskId
+        }
+      });
+      setEditList(!editList);
+      await fetchTasks(selectedBoard);
+    } catch (error) {
+      console.error('Error removing task:', error);
+    }
+  };
 
   return (
     <>
@@ -270,8 +290,8 @@ function Management() {
         <div className='navbar-content'>
           <label className='navbar-content-label'>CONTENT</label>
           <div className='content-icons'>
-            <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="18"><path d="M480-120q-151 0-255.5-46.5T120-280v-400q0-66 105.5-113T480-840q149 0 254.5 47T840-680v400q0 67-104.5 113.5T480-120Zm0-479q89 0 179-25.5T760-679q-11-29-100.5-55T480-760q-91 0-178.5 25.5T200-679q14 30 101.5 55T480-599Zm0 199q42 0 81-4t74.5-11.5q35.5-7.5 67-18.5t57.5-25v-120q-26 14-57.5 25t-67 18.5Q600-528 561-524t-81 4q-42 0-82-4t-75.5-11.5Q287-543 256-554t-56-25v120q25 14 56 25t66.5 18.5Q358-408 398-404t82 4Zm0 200q46 0 93.5-7t87.5-18.5q40-11.5 67-26t32-29.5v-98q-26 14-57.5 25t-67 18.5Q600-328 561-324t-81 4q-42 0-82-4t-75.5-11.5Q287-343 256-354t-56-25v99q5 15 31.5 29t66.5 25.5q40 11.5 88 18.5t94 7Z" /></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="18"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="18"><path d="M480-120q-151 0-255.5-46.5T120-280v-400q0-66 105.5-113T480-840q149 0 254.5 47T840-680v400q0 67-104.5 113.5T480-120Zm0-479q89 0 179-25.5T760-679q-11-29-100.5-55T480-760q-91 0-178.5 25.5T200-679q14 30 101.5 55T480-599Zm0 199q42 0 81-4t74.5-11.5q35.5-7.5 67-18.5t57.5-25v-120q-26 14-57.5 25t-67 18.5Q600-528 561-524t-81 4q-42 0-82-4t-75.5-11.5Q287-543 256-554t-56-25v120q25 14 56 25t66.5 18.5q40 11.5 88 18.5t94 7Zm0 200q46 0 93.5-7t87.5-18.5q40-11.5 67-26t32-29.5v-98q-26 14-57.5 25t-67 18.5Q600-328 561-324t-81 4q-42 0-82-4t-75.5-11.5Q287-343 256-354t-56-25v99q5 15 31.5 29t66.5 25.5q40 11.5 88 18.5t94 7Z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="18"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-560h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" /></svg>
             <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 -960 960 960" width="18"><path d="M280-280h80v-200h-80v200Zm320 0h80v-400h-80v400Zm-160 0h80v-120h-80v120Zm0-200h80v-80h-80v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" /></svg>
           </div>
 
@@ -298,20 +318,20 @@ function Management() {
         initial="close"
       >
 
-       <div className='boardItems'>
-         {boards.map((board) => (       
-          <button
-            className='navbarBoardsBtn'
-            type='button'
-            onClick={() => {
-              handleNavbarButtonClick(board.id);
-              handleBoardClick();
-            }}
-          >
-            {board.title}
-          </button>
-      ))}
-       </div>
+        <div className='boardItems'>
+          {boards.map((board) => (
+            <button
+              className='navbarBoardsBtn'
+              type='button'
+              onClick={() => {
+                handleNavbarButtonClick(board.id, board.title);
+                handleBoardClick();
+              }}
+            >
+              {board.title}
+            </button>
+          ))}
+        </div>
 
 
       </motion.div>
@@ -336,9 +356,10 @@ function Management() {
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
-                                    className='tab1NewTask'
+                                    className='tabTasks'
                                   >
                                     {editedTaskId === task.id ? (
+
                                       <input
                                         className='tab1Tasks'
                                         type="text"
@@ -346,17 +367,43 @@ function Management() {
                                         onChange={(e) => handleTaskNameChange(task.id, e.target.value)}
                                         onBlur={() => handleBlur(task.id, task.title)}
                                       />
+
                                     ) : (
-                                      <span className='tab1Tasks' onClick={() => setEditedTaskId(task.id)}>{task.title}</span>
+                                     <>
+                                     <div className='tab1span-container'>
+                                     <span className='tab1TasksSpan' onClick={() => setEditedTaskId(task.id)}>{task.title}</span>
+                                     </div>
+                                       
+                                      <div className='edit'>
+                                      <button className='editTask' onClick={handleEditList}>...</button>
+                                      </div>
+                                      {editList ? (
+                                        <>
+                                        <div className='editList'>
+                                            <button className='removeTaskBtn' onClick={() => handleTaskRemoval(task.id)}>Remove task</button>
+                                        </div>
+                                        </>
+                                      ) : (
+                                        <>
+                                        </>
+                                      )}
+                                       </> 
+                                     
+
                                     )}
                                   </div>
+
                                 )}
+
+
                               </Draggable>
                             )
                           ))}
                           {provided.placeholder}
                           <div className='tab1NewTask'><button type='button' onClick={handleNewTask}><span>+ New</span></button></div>
+
                         </div>
+
                       )}
                     </Droppable>
                   </div>
@@ -375,7 +422,7 @@ function Management() {
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
-                                    className='tab1NewTask'
+                                    className='tabTasks'
                                   >
                                     {editedTaskId === task.id ? (
                                       <input
@@ -386,7 +433,26 @@ function Management() {
                                         onBlur={() => handleBlur(task.id, task.title)}
                                       />
                                     ) : (
-                                      <span className='tab1Tasks' onClick={() => setEditedTaskId(task.id)}>{task.title}</span>
+                                      <>
+                                      <div className='tab1span-container'>
+                                      <span className='tab1TasksSpan' onClick={() => setEditedTaskId(task.id)}>{task.title}</span>
+                                      </div>
+                                        
+                                       <div className='edit'>
+                                       <button className='editTask' onClick={handleEditList}>...</button>
+                                       </div>
+                                       {editList ? (
+                                         <>
+                                         <div className='editList'>
+                                             <button className='removeTaskBtn' onClick={() => handleTaskRemoval(task.id)}>Remove task</button>
+                                         </div>
+                                         </>
+                                       ) : (
+                                         <>
+                                         </>
+                                       )}
+                                        </> 
+
                                     )}
                                   </div>
                                 )}
@@ -413,7 +479,7 @@ function Management() {
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
-                                    className='tab1NewTask'
+                                    className='tabTasks'
                                   >
                                     {editedTaskId === task.id ? (
                                       <input
@@ -424,7 +490,25 @@ function Management() {
                                         onBlur={() => handleBlur(task.id, task.title)}
                                       />
                                     ) : (
-                                      <span className='tab1Tasks' onClick={() => setEditedTaskId(task.id)}>{task.title}</span>
+                                      <>
+                                     <div className='tab1span-container'>
+                                     <span className='tab1TasksSpan' onClick={() => setEditedTaskId(task.id)}>{task.title}</span>
+                                     </div>
+                                       
+                                      <div className='edit'>
+                                      <button className='editTask' onClick={handleEditList}>...</button>
+                                      </div>
+                                      {editList ? (
+                                        <>
+                                        <div className='editList'>
+                                            <button className='removeTaskBtn' onClick={() => handleTaskRemoval(task.id)}>Remove task</button>
+                                        </div>
+                                        </>
+                                      ) : (
+                                        <>
+                                        </>
+                                      )}
+                                       </> 
                                     )}
                                   </div>
                                 )}
@@ -448,6 +532,8 @@ function Management() {
       )}
     </>
   );
+
+
 }
 
 export default Management;
