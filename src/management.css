@@ -92,7 +92,7 @@
 }
 
 .navbar-content .content-btn button:hover {
-    background-color: #444242;
+    background-color: #dddddd;
 }
 
 .navbar-content-label {
@@ -102,40 +102,6 @@
     font-weight: 400;
     position: relative;
     left: 42px;
-}
-
-.premium-ad {
-    width: 192px;
-    height: 192px;
-    border-radius: 28px;
-    box-sizing: 192px 192px;
-    background-image: linear-gradient(to right, #FE00E5, #00DCF4);
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 1000px;
-    left: 18px;
-}
-
-.premium-label {
-    color: #FFFFFF;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    position: relative;
-    left: 25px;
-    top: 70px;
-}
-
-.premium-button {
-    color: #B83DE9;
-    background-color: #F4F4F4;
-    border-style: none;
-    width: 157px;
-    height: 27px;
-    border-radius: 7px;
-    position: absolute;
-    top: 140px;
 }
 
 .management-page {
@@ -152,7 +118,7 @@
     display: flex;
     justify-content: center;
 
-    left: 20px;
+    right: 200px;
     flex-direction: row;
     top: 150px;
     position: relative;
@@ -306,12 +272,25 @@
     justify-content: center;
 }
 
+.boardItems {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .navbarBoardsBtn {
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 130px;
+    border-radius: 20px;
     position: relative;
-    color: black;
-    font-size: 10px;
+    background-color: #0070C9;
+    color: #F4F4F4;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    border-style: none;
+    margin-top: 20px;
 }
 
 .newBoardButton {
@@ -371,9 +350,9 @@
     background-color: #FAFBFE;
     box-shadow: 9px 11px 28px #00074628;
     display: flex;
-    position: fixed;
-    left: 550px;
-    top: 275px;
+    position: absolute;
+    left: 290px;
+    top: 25px;
     justify-content: center;
 }
 

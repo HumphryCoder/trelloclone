@@ -49,7 +49,7 @@ function Signup() {
     }
     return (
         <>
-        <Header />
+      <div className="signup-bg">   
         <div className="signup-container">
 
 
@@ -66,6 +66,7 @@ function Signup() {
                 <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} />
                 <button className="signup-element" type="submit">Sign up</button>
             </form>
+        </div>
         </div>
         </>
     );

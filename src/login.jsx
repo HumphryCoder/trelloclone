@@ -62,32 +62,32 @@ function login() {
 
     return (
         <>
-          <Header />
-            <div className="login-container">
+            <div className='login-bg'>
+                <div className="login-container">
 
 
-                <form onSubmit={handleSubmit} className="login-form">
-                    <div className="welcome-element">
-                        <p>welcome to NestFlow</p>
-                        <h1>Log into your</h1>
-                        <h2>Account</h2>
-                    </div>
+                    <form onSubmit={handleSubmit} className="login-form">
+                        <div className="welcome-element">
+                            <p>welcome to NestFlow</p>
+                            <h1>Log into your</h1>
+                            <h2>Account</h2>
+                        </div>
 
-                    <label className="emailLabel" htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" value={FormData.email} onChange={handleChange} />
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" value={FormData.password} onChange={handleChange} />
-                    <button className="login-element" type="submit">Log in</button>
-                   <div  className="signup-element-link">
-                   <Link to="/signup">Signup</Link>
-                    </div> 
-                </form>
-
-
+                        <label className="emailLabel" htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email" value={FormData.email} onChange={handleChange} />
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" name="password" value={FormData.password} onChange={handleChange} />
+                        <button className="login-element" type="submit">Log in</button>
+                        <div className="signup-element-link">
+                            <Link to="/signup">Signup</Link>
+                        </div>
+                    </form>
 
 
+
+
+                </div>
             </div>
-
 
         </>
     );

@@ -256,10 +256,16 @@ function Management() {
     }
   };
 
-  const [editList, setEditList] = useState(false);
+  const [editListId, setEditListId] = useState(null);
 
-  const handleEditList = () => {
-    setEditList(!editList);
+  const handleEditList = (taskId) => {
+    
+    if(editListId != taskId) {
+      setEditListId(taskId);
+    } else {
+      setEditListId(null);
+    }
+   
   }
 
   const handleTaskRemoval = async (taskId) => {
@@ -271,7 +277,7 @@ function Management() {
           id: taskId
         }
       });
-      setEditList(!editList);
+      setEditListId(null);
       await fetchTasks(selectedBoard);
     } catch (error) {
       console.error('Error removing task:', error);
@@ -302,10 +308,7 @@ function Management() {
           </div>
 
 
-          <div className='premium-ad'>
-            <label className='premium-label'>Get Premium For More Features</label>
-            <button className='premium-button'>Get premium</button>
-          </div>
+          
         </div>
 
 
@@ -375,19 +378,19 @@ function Management() {
                                      </div>
                                        
                                       <div className='edit'>
-                                      <button className='editTask' onClick={handleEditList}>...</button>
+                                      <button className='editTask' onClick={() => handleEditList(task.id)}>...</button>
                                       </div>
-                                      {editList ? (
-                                        <>
-                                        <div className='editList'>
-                                            <button className='removeTaskBtn' onClick={() => handleTaskRemoval(task.id)}>Remove task</button>
-                                        </div>
-                                        </>
-                                      ) : (
-                                        <>
-                                        </>
-                                      )}
-                                       </> 
+                                      {editListId === task.id ? (
+                                         <>
+                                         <div className='editList'>
+                                             <button className='removeTaskBtn' onClick={() => handleTaskRemoval(task.id)}>Remove task</button>
+                                         </div>
+                                         </>
+                                       ) : (
+                                         <>
+                                         </>
+                                       )}
+                                        </> 
                                      
 
                                     )}
@@ -439,9 +442,9 @@ function Management() {
                                       </div>
                                         
                                        <div className='edit'>
-                                       <button className='editTask' onClick={handleEditList}>...</button>
+                                       <button className='editTask' onClick={() => handleEditList(task.id)}>...</button>
                                        </div>
-                                       {editList ? (
+                                       {editListId === task.id ? (
                                          <>
                                          <div className='editList'>
                                              <button className='removeTaskBtn' onClick={() => handleTaskRemoval(task.id)}>Remove task</button>
@@ -496,19 +499,19 @@ function Management() {
                                      </div>
                                        
                                       <div className='edit'>
-                                      <button className='editTask' onClick={handleEditList}>...</button>
+                                      <button className='editTask' onClick={() => handleEditList(task.id)}>...</button>
                                       </div>
-                                      {editList ? (
-                                        <>
-                                        <div className='editList'>
-                                            <button className='removeTaskBtn' onClick={() => handleTaskRemoval(task.id)}>Remove task</button>
-                                        </div>
-                                        </>
-                                      ) : (
-                                        <>
-                                        </>
-                                      )}
-                                       </> 
+                                      {editListId === task.id ? (
+                                         <>
+                                         <div className='editList'>
+                                             <button className='removeTaskBtn' onClick={() => handleTaskRemoval(task.id)}>Remove task</button>
+                                         </div>
+                                         </>
+                                       ) : (
+                                         <>
+                                         </>
+                                       )}
+                                        </> 
                                     )}
                                   </div>
                                 )}

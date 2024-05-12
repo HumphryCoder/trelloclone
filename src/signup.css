@@ -5,13 +5,19 @@
     margin: 0;
 }
 
-
-
-.signup-page {
-    margin: 0;
-    background-image: linear-gradient(90deg,  #FFC700, #FFDD3A);
-    overflow: hidden;
-  }
+.signup-bg {
+    height: 100vh; 
+  width: 100%; 
+  margin: 0;
+  background-image: linear-gradient(
+    120deg, 
+    #EE83FF 0%, 
+    #DB00FF 31%, 
+    #8F00FF 100% 
+  );
+ 
+  background-size: cover;
+}
 
   .signup-container {
     display: flex;

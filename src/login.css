@@ -7,11 +7,19 @@
 
 
 
-.login-page {
-    margin: 0;
-    background-image: linear-gradient(90deg,  #FFC700, #FFDD3A);
-    overflow: hidden;
-  }
+.login-bg {
+    height: 100vh; 
+  width: 100%; 
+  margin: 0;
+  background-image: linear-gradient(
+    120deg, 
+    #EE83FF 0%, 
+    #DB00FF 31%, 
+    #8F00FF 100% 
+  );
+ 
+  background-size: cover;
+}
 
 .login-container {
     display: flex;
@@ -19,6 +27,7 @@
     justify-content: center;
     align-items: left;
     top: 135px;
+    
 
 }
 

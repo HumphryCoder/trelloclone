@@ -17,6 +17,12 @@ function homepage() {
         <>
    
       <Header />
+      <div className='heropage-container'>
+        <div className='hero-text'>
+           <h1 className='hero-h1'>Mastering the Art of Goal Attainment</h1>
+           <h2 className='hero-h2'>because success is a journey, not a destination.</h2>
+        </div>
+      </div>
        
         </>
     );
