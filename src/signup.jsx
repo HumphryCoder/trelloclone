@@ -19,8 +19,8 @@ function Signup() {
         return () => {
             document.body.classList.remove('signup-page');
         };
-
-    }, []); // Add userEmail to the dependency array
+ 
+    }, []); 
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -8,107 +8,230 @@
 
 }
 
-.projectbar-container {
-    display: flex;
-    justify-content: center;
-    width: 1400px;
-    height: 45px;
-    background-color: #F1F2F5;
-    position: relative;
-    left: 250px;
-    top: 100px;
-    border-radius: 25px;
-    box-shadow: 8px 17px 20px #00000038;
+.taskContent {
+    width: 340px;
+    height: 100px;
+
+    border-radius: 7px;
+    border: solid 2px #363560;
+
+    background-color: #1E1D41;
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
 
 }
 
+.taskContent:hover {
+    border: solid 2px #2c66ee;
+}
+
+.editTaskBtn {
+    visibility: hidden;
+}
+
+.taskContent:hover .editTaskBtn {
+    visibility: visible;
+}
+
+.taskTitle {
+    display: inline-block;
+    position: relative;
+
+    width: 270px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    left: 15px;
+    top: 15px;
+
+}
+
+.editTaskBtn {
+    background-color: transparent;
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+   left: 295px;
+    bottom: 20px;
+    
+    font-size: 23px;
+}
+
+.editTaskBtn svg {
+    fill: #ffffff;
+}
+
+.editTaskBtn:hover {
+    background-color: #191835;
+}
+
+.projectbar-container {
+    display: flex;
+    justify-content: center;
+    width: 1510px;
+    height: 55px;
+    background-color: #1E1D41;
+    position: relative;
+    left: 375px;
+    top: 100px;
+    border-radius: 20px;
+}
+
+.newBoardButton {
+    position: absolute;
+    left: 1330px;
+    top: 11px;
+    width: 125px;
+    height: 35px;
+    border-radius: 5px;
+
+    background-image: linear-gradient(180deg, #7265FA, #584AE8);
+    color: #F4F4F4;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+
+    border-color: #00000000;
+    box-shadow: 3px 6px 10px #0000002f;
+}
+
 .navbar-container {
-    background-color: #F1F2F5;
-    border-right: 2px solid #D4D3D3;
+    background-color: #1E1D41;
+    border-right: 2px solid #1E1D41;
     display: flex;
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
-    width: 230px;
+    width: 330px;
     height: 100%;
-    justify-content: center;
+
     z-index: 10;
-}
-
-
-.board-container {
-    background-color: #F1F2F5;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 180px;
-    height: 100%;
-    justify-content: center;
-    z-index: 1;
 }
 
 .navbar-content {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    position: relative;
-    bottom: 300px;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
 }
 
-.content-icons {
+.content-btn {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     position: absolute;
+
 }
 
-.content-icons svg {
-    fill: #201E1E;
-    position: relative;
-    margin-top: 35px;
-    bottom: 0px;
-    left: 39px;
+.content-btn button {
 
-    z-index: 2;
-}
-
-.navbar-content .content-btn button {
-
-    margin-top: 18px;
+    margin-top: 20px;
     border-radius: 14px;
     border-style: none;
     background-color: #ffffff00;
-    color: #201E1E;
-    font-size: 18px;
+    color: #939393;
+    font-size: 22px;
     font-family: "Inter", sans-serif;
     font-weight: 400;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    left: 10px;
-    width: 200px;
-    height: 35px;
+    top: 120px;
+
+    width: 295px;
+    height: 45px;
 }
 
-.navbar-content .content-btn button:hover {
-    background-color: #dddddd;
+.content-btn button:hover {
+    color: #FFFFFF;
+    font-weight: 550;
+    background-image: linear-gradient(180deg, #7265FA, #584AE8);
 }
 
-.navbar-content-label {
-    color: #0070C9;
-    font-size: 11px;
+
+.navbar-menu-label {
+    color: #FFFFFF;
+    font-size: 20px;
     font-family: "Inter", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     position: relative;
-    left: 42px;
+    left: -125px;
+    top: 100px;
+}
+
+.navbar-boards-label {
+    display: flex;
+    flex-direction: row;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    position: relative;
+    text-align: center;
+    left: -95px;
+    top: 390px;
+
+}
+
+.board-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Take full width to center */
+    top: 500px;
+
+}
+
+.boardItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.navbarBoardsBtn {
+    height: 30px;
+    width: 330px;
+
+    background-color: #ffffff00;
+    color: #F4F4F4;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    border-style: none;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.navbarBoardsBtn:hover {
+    background-color: #222147;
 }
 
 .management-page {
     height: 100%;
     width: 100%;
     margin: 0;
-    background-color: #E8EAEF;
+    background-color: #191835;
 
     overflow-x: hidden;
     background-size: cover;
@@ -118,11 +241,46 @@
     display: flex;
     justify-content: center;
 
-    right: 200px;
+    left: 375px;
     flex-direction: row;
-    top: 150px;
-    position: relative;
+    top: 200px;
+    position: absolute;
 
+}
+
+.addTaskbtn {
+    width: 340px;
+    height: 60px;
+
+    border-radius: 7px;
+    border: dashed 2px #2B2A56;
+
+    background-color: #19183A;
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.emptyAddTaskbtn {
+    width: 340px;
+    height: 100px;
+
+    border-radius: 7px;
+    border: dashed 2px #2B2A56;
+
+    background-color: #19183A;
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+
+}
+
+.emptyAddTaskbtn:hover {
+    border: solid 2px #2c66ee;
 }
 
 .notStartedTab {
@@ -132,15 +290,15 @@
 
 .tab1Bg {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 380px;
-    background-color: #F1F2F5;
+  
+    width: 340px;
+
+    background-color: #ff191900;
     border-radius: 25px;
     padding-bottom: 10px;
-    box-shadow: 8px 17px 23px #0000003d;
+    box-shadow: 8px 17px 23px #00000000;
     margin-right: 100px;
-    
+
 }
 
 .tab1Bg li {
@@ -158,6 +316,7 @@
     height: 25px;
     width: 180px;
     border-radius: 10px;
+
 }
 
 .tab1Label p {
@@ -272,59 +431,16 @@
     justify-content: center;
 }
 
-.boardItems {
-    display: flex;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.navbarBoardsBtn {
-    height: 60px;
-    width: 130px;
-    border-radius: 20px;
-    position: relative;
-    background-color: #0070C9;
-    color: #F4F4F4;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    border-style: none;
-    margin-top: 20px;
-}
-
-.newBoardButton {
-    position: absolute;
-    left: 1280px;
-    top: 6px;
-    width: 80px;
-    height: 30px;
-    border-radius: 15px;
-
-    background-color: #0070C9;
-    color: #F4F4F4;
-
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-
-    border-color: #00000000;
-    box-shadow: 3px 6px 10px #0000002f;
-}
 
 .boardTitle {
     position: relative;
-    color: #201E1E;
+    color: #FFFFFF;
     font-family: "Inter", sans-serif;
-    font-weight: 400;
-    right: 610px;
-    top: 6px;
-    font-size: 24px;
+    font-weight: 350;
+    right: 890px;
+    top: 14px;
+    font-size: 28px;
 }
-
-
-
-
 
 .edit .editTask {
     position: relative;
@@ -344,17 +460,142 @@
 }
 
 .editList {
-    height: 35px;
-    width: 140px;
+    height: 85px;
+    width: 150px;
     border-radius: 10px;
-    background-color: #FAFBFE;
+    background-color: #19183A;
+    border: solid 2px #2B2A56;
+    box-shadow: 9px 11px 28px #00074628;
+    display: flex;
+    position: relative;
+    left: 300px;
+    bottom: 40px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+ 
+}
+
+.editTask {
+    height: 350px;
+    width: 650px;
+    border-radius: 10px;
+    background-color: #19183A;
+    border: solid 2px #2B2A56;
     box-shadow: 9px 11px 28px #00074628;
     display: flex;
     position: absolute;
-    left: 290px;
-    top: 25px;
+    left: 300px;
+    top: 35px;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2000;
 }
+
+.editTaskTitle {
+    background-color: transparent;
+    border: transparent;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    outline: none;
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+    font-weight: 380;
+
+}
+
+.editChoice {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 245px;
+    bottom: 20px;
+}
+
+.editChoice label{
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 250;
+
+    color: #B0B0B0;
+}
+
+.editDescription {
+   
+
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 20px;
+    bottom: 95px;
+   
+   
+}
+
+.editTaskDescription {
+    
+    display: flex;
+    top: 265px;
+    right: 45px;
+    position: absolute;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 250;
+    outline: none;
+
+    background-color: transparent;
+    border: transparent;
+    color: #B0B0B0;
+    resize: none;
+    width: 90%;
+    height: 60px;
+}
+
+.editMenubtn {
+    height: 30px;
+    width: 145px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #BBBBBB;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 350;
+    font-size: 17px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.editMenubtn:hover {
+    background-color: #363560;
+}
+
+
+.deleteTaskbtn {
+    height: 30px;
+    width: 145px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: transparent;
+    color: #E82444;
+    font-family: "Inter", sans-serif;
+    font-weight: 350;
+    font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.deleteTaskbtn:hover {
+    background-color: #E82444;
+    color: #ffffff;
+}
+
 
 .removeTaskBtn {
     align-self: center;
@@ -373,7 +614,7 @@
 }
 
 .removeTaskBtn:hover {
-   
+
     background-color: #bd334c;
-   
+
 }
